@@ -93,10 +93,10 @@ section {
  }
       #mainNav .navbar-brand {
         color: fade(white, 70%);
-        display:none
+        /*display:none*/
       }
         #mainNav .navbar-brand:hover, #mainNav .navbar-brand:focus {
-          color: white; }
+          color: #222222; }
       #mainNav .navbar-nav > li > a,
       #mainNav .navbar-nav > li > a:focus {
         color: #222222; }
@@ -309,6 +309,22 @@ footer {
   letter-spacing: 2px;
   text-transform: uppercase;
   background: #04a }
+
+  .btnyellow {
+    border-radius: 300px;
+    font-family: 'Lato', 'Helvetica', 'Arial', 'sans-serif';
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    background: #fdcc52;
+    color: black; }
+    .btn-outlineyellow {
+      color: black;
+      border: 1px solid;
+      border-color: white; }
+      .btn-outlineyellow:hover, .btn-outlineyellow:focus, .btn-outlineyellow:active, .btn-outlineyellow.active {
+        color: white;
+        border-color: #32bdbc;
+        background-color: #32bdbc; }
 
 .btn-xl {
   font-size: 11px;
