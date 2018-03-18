@@ -45,8 +45,8 @@
     <meta property="og:url" content="http://kieznerds.de" />
 		<meta property="og:type" content="website" />
 		<meta property="og:title" content="Kieznerds" />
-		<meta property="og:description" content="Vergleichen Sie mit Hilfe des Science-O-Mat Ihre Standpunkte zu unseren Thesen mit den Antworten dieser Parteien!" />
-		<meta property="og:image" content="/img/bg-pattern3.png" />
+		<meta property="og:description" content="" />
+		<meta property="og:image" content="/img/bg-pattern.png" />
 
 
     <!-- leaflet
@@ -161,21 +161,10 @@ map.on('click', function(e) {
 
   var popup = new mapboxgl.Popup({ offset: [0, -15] })
     .setLngLat(feature.geometry.coordinates)
-    .setHTML('<h3>' + feature.properties.Title + '</h3><p>Scientist:' + feature.properties.Scientist + '</p><p>' + feature.properties.Location + '<br />' + feature.properties.Time + '</p><p>' + feature.properties.Language + '</p>')
+    .setHTML('<h3>' + feature.properties.Title + '</h3><p>' + feature.properties.Scientist + '</p><p>' + feature.properties.Location + '<br />' + feature.properties.Time + '</p><p>Sprache: ' + feature.properties.Language + '</p>')
     .setLngLat(feature.geometry.coordinates)
     .addTo(map);
 });
-
-// Change the cursor to a pointer when the mouse is over the places layer.
-map.on('mouseenter', 'places', function () {
-    map.getCanvas().style.cursor = 'pointer';
-});
-
-// Change it back to a pointer when it leaves.
-map.on('mouseleave', 'places', function () {
-    map.getCanvas().style.cursor = '';
-});
-
 
 </script>
 

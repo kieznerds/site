@@ -5,6 +5,10 @@
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!--mapbox-->
+        <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.31.0/mapbox-gl.js'></script>
+        <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.31.0/mapbox-gl.css' rel='stylesheet' />
+
     <meta name="description" content="">
     <meta name="author" content="">
 
@@ -41,6 +45,16 @@
 		<meta property="og:title" content="Kieznerds" />
 		<meta property="og:description" content="" />
 		<meta property="og:image" content="/img/bg-pattern.png" />
+
+    <style>
+    #map {top: 60px;
+    position: absolute;
+    top: 60px;
+    bottom: 0;
+    width: 100%;
+  }
+    </style>
+
   </head>
 
   <body id="page-top">
@@ -77,13 +91,42 @@
 
     <!--Masthead section-->
     <header class="masthead">
-      <div class="container h-100">
+      <div id='map'></div>
+      <script>
+      mapboxgl.accessToken = 'pk.eyJ1IjoibWF0emV4YW50IiwiYSI6ImNpdmJiNTRrejAwM20yemxhbWp6NjB3b3cifQ.LYvCooKSAZrYiZdTyi9NOQ';
+      var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/matzexant/cj42imgsn4z3a2rp9nqnepk1f' // replace this with your style URL
+      });
+
+      map.on('click', function(e) {
+        var features = map.queryRenderedFeatures(e.point, {
+          layers: ['locations'] // replace this with the name of the layer
+        });
+
+        if (!features.length) {
+          return;
+        }
+
+        var feature = features[0];
+
+        var popup = new mapboxgl.Popup({ offset: [0, -15] })
+          .setLngLat(feature.geometry.coordinates)
+          .setHTML('<h3>' + feature.properties.Title + '</h3><p>' + feature.properties.Scientist + '</p><p>' + feature.properties.Location + '<br />' + feature.properties.Time + '</p><p>Sprache: ' + feature.properties.Language + '</p>')
+          .setLngLat(feature.geometry.coordinates)
+          .addTo(map);
+      });
+
+      </script>
+      <!--<div class="container h-100">
         <div class="row h-100">
           <div class="col-lg-7 my-auto">
+
             <div class="header-content mx-auto">
-              <!--<h1 class="mb-5">Kieznerds</h1>-->
+
+
                 <h1 class="mb-5">Gemeinsam retten wir die Welt!</h1>
-              <a href="#machmit" class="btn btnyellow btn-outlineyellow btn-xl js-scroll-trigger">Werde Kieznerd</a>
+              <a href="#machmit" class="btn btnyellow btn-outlineyellow btn-xl js-scroll-trigger">Werde Kieznerd</a>-->
             </div>
           </div>
         </div>
