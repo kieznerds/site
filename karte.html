@@ -161,11 +161,21 @@ map.on('click', function(e) {
 
   var popup = new mapboxgl.Popup({ offset: [0, -15] })
     .setLngLat(feature.geometry.coordinates)
-    .setHTML('<h3>' + feature.properties.title + '</h3><p>' + feature.properties.Scientist + '</p><p>' + feature.properties.Location + '</p><p>' + feature.properties.Time + '</p><p>' + feature.properties.Language + '</p><p>' + feature.properties.Comments + '</p>')
+    .setHTML('<h3>' + feature.properties.Title + '</h3><p>Scientist:' + feature.properties.Scientist + '</p><p>' + feature.properties.Location + '<br />' + feature.properties.Time + '</p><p>' + feature.properties.Language + '</p>')
     .setLngLat(feature.geometry.coordinates)
     .addTo(map);
 });
 
+// Change the cursor to a pointer when the mouse is over the places layer.
+map.on('mouseenter', 'places', function () {
+    map.getCanvas().style.cursor = 'pointer';
+});
+
+// Change it back to a pointer when it leaves.
+map.on('mouseleave', 'places', function () {
+    map.getCanvas().style.cursor = '';
+});
+});
 
 </script>
 
