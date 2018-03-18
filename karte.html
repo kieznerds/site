@@ -97,23 +97,8 @@
     </nav>
 
     <!--Masthead section-->
-<!--mapbox
-<div id='mapid'></div>
-    <script>
-    mapboxgl.accessToken = 'pk.eyJ1IjoibWF0emV4YW50IiwiYSI6ImNpdmJiNTRrejAwM20yemxhbWp6NjB3b3cifQ.LYvCooKSAZrYiZdTyi9NOQ'; // replace this with your access token
 
-    var map = new mapboxgl.Map({
-      container: 'map',
-      style: 'your-style-URL-here' // replace this with your style URL
-    });
-
-    // code from the next step will go here
-
-    </script>
--->
-
-
-<!--leaflet-->
+<!--leaflet
 <div id="mapid"></div>
     <script>
     var mymap = L.map('mapid').setView([52.515737, 13.378365], 11);
@@ -147,6 +132,16 @@ function popUp(f,l){
   }
 }
 var jsonTest = new L.GeoJSON.AJAX(["locations.geojson"],{onEachFeature:popUp}).addTo(mymap);*/
+</script>-->
+
+<!--mapbox-->
+<div id='mapid'></div>
+<script>
+mapboxgl.accessToken = 'pk.eyJ1IjoibWF0emV4YW50IiwiYSI6ImNpdmJiNTRrejAwM20yemxhbWp6NjB3b3cifQ.LYvCooKSAZrYiZdTyi9NOQ';
+var map = new mapboxgl.Map({
+  container: 'map',
+  style: 'mapbox://styles/matzexant/cj42imgsn4z3a2rp9nqnepk1f' // replace this with your style URL
+});
 
 map.on('click', function(e) {
   var features = map.queryRenderedFeatures(e.point, {
