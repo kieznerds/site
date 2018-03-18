@@ -59,7 +59,12 @@
   </script>-->
 
     <style>
-    #mapid {top: 60px; height:100%;}
+    #map {top: 60px;
+    position: absolute;
+    top: 60px;
+    bottom: 0;
+    width: 100%;
+  }
     </style>
 
   </head>
@@ -135,7 +140,7 @@ var jsonTest = new L.GeoJSON.AJAX(["locations.geojson"],{onEachFeature:popUp}).a
 </script>-->
 
 <!--mapbox-->
-<div id='mapid'></div>
+<div id='map'></div>
 <script>
 mapboxgl.accessToken = 'pk.eyJ1IjoibWF0emV4YW50IiwiYSI6ImNpdmJiNTRrejAwM20yemxhbWp6NjB3b3cifQ.LYvCooKSAZrYiZdTyi9NOQ';
 var map = new mapboxgl.Map({
