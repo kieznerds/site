@@ -140,44 +140,23 @@
     </nav>
 
     <!--Masthead section-->
-    <section class="warum" id="was" style="padding-top: 110px; padding-bottom:10px;">
-      <div class="container">
-          <p>Das Klischee kennt jeder: Am Stammtisch werden die Weltprobleme gelöst. Probiere es aus, mit tollen Gesprächspartnerinnen und -partnern: Am Samstag, den 10. November, kannst Du Forscherinnen und Forscher in ihrer Lieblingskneipe treffen und mit Ihnen diskutieren.</p><br />
-          <h2>„Kieznerds – Gemeinsam retten wir die Welt”</h2>
-          <p>Wissenschaftlerinnen und Wissenschaftler sind Teil unserer Gesellschaft und haben Meinungen, Wünsche und Hoffnungen wie wir alle. Auch die Forschenden sind Teil unserer Gesellschaft und engagieren sich für unterschiedliche Anliegen.</p>
-          <p>Normalerweise arbeiten sie zwar an ziemlich speziellen Teilproblemen in den vielen Forschungseinrichtungen der Stadt. Oft klingt das sehr kompliziert, was sie tun, aber wenn man darüber spricht, wird klar: Sie arbeiten im Grunde daran, die Welt und unsere Gesellschaft besser zu verstehen und die großen Probleme unserer Zeit zu lösen. Sie entwickeln bessere Solarzellen und beobachten, wie sich Ökosysteme durch Klimawandel und andere menschliche Eingriffe verändern. Andere erforschen, wie wir gesund und glücklich alt werden können, untersuchen, wie Gewalt entsteht oder wie Reichtum gerechter verteilt werden könnte. Das sind wichtige Fragen, die uns alle angehen.</p>
-          <p>Lerne Expertinnen und Experten aus Deinem Kiez kennen, stelle die Fragen, die Dich bewegen und diskutiere offen und auf Augenhöhe mit ihnen! </p>
-          <p>Denn: Die Wissenschaft allein kann die Welt nicht retten – Nur gemeinsam retten wir die Welt!</p><br />
 
-          <p><strong>Datum: Samstag, den 10. November 2018</strong></p>
-          <p><strong>Uhrzeit:  jeweils eine Stunde, über den ganzen Tag verteilt - wird rechtzeitig bekanntgegeben</strong></p>
-          <p><strong>Wo: In Kneipen, Cafés, Gemeindezentren, Bars … in Berlin und Potsdam</strong></p><br />
-          <p>(Das vollständige Programm mit Adressen, Themen und Zeiten veröffentlichen wir dann hier.)</p><br />
-          <h3>Die Kieznerds - eine Aktion des Berliner March for Science</h3>
-          <p>Die Kieznerds sind aus dem <a href="http://marchforscienceberlin.de/">Berliner March for Science</a> entstanden, einer Demonstration für Aufklärung und Wissenschaft, die weltweit in vielen Städten am 22. April 2017 stattfand. Das Anliegen: Wissenschaftlich fundierte Erkenntnisse müssen ausreichend Gehör in Politik und Gesellschaft finden! In Berlin haben mehr als 10.000 Menschen dafür demonstriert.</p>
-          <p>Im Anschluss an diesen Erfolg kam im Berliner Organisationsteam die Idee auf, neue Gelegenheiten für direkte Gespräche zwischen Laien und Fachleuten zu schaffen: Die Kieznerds! Alle Kieznerds sind als Forscherinnen oder Forscher in Berlin und Potsdam tätig und haben sich freiwillig gemeldet, weil sie gerne mit ihren Nachbarinnen und Nachbarn in ihrem Kiez ins Gespräch kommen wollen.</p>
-          <p>Zum Jahrestag des <a href="http://marchforscienceberlin.de/">Berliner March for Science</a>, am 14. April 2018, fanden die „Kieznerds“ zum ersten Mal statt:  22 Wissenschaftlerinnen und 15 Wissenschaftler unterhielten sich mit ihren Nachbarinnen und Nachbarn, mit neugierigen Besuchern und Zufallsbekanntschaften. In 25 Cafés, Restaurants, Bars und anderen Lokalitäten in Berlin und Potsdam stellten sie ihre Forschung vor und diskutierten über den Wert von Wissenschaft für die Gesellschaft.</p>
-          <p><strong>Nun sind die Kieznerds ein zweites Mal unterwegs. Mach mit!</strong></p>
-
-      <br />
-      </div>
-    </section>
     <header class="masthead">
-
-
-      <!--leaflet
+      <!--leaflet-->
       <div id="map"></div>
           <script>
 
           //tiles
-          var map = L.map('map').setView([52.467750, 13.228694], 10);
+          var map = L.map('map', {
+            scrollWheelZoom: false
+          }).setView([52.479965, 13.367996], 11);
           L.tileLayer('https://api.mapbox.com/styles/v1/matzexant/cj42imgsn4z3a2rp9nqnepk1f/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWF0emV4YW50IiwiYSI6ImNpdmJiNTRrejAwM20yemxhbWp6NjB3b3cifQ.LYvCooKSAZrYiZdTyi9NOQ', {
           maxZoom: 18,
           attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' + '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' + 'Imagery © <a href="http://mapbox.com">Mapbox</a>',
           id: 'mapbox.streets'
           }).addTo(map);
 
-          //icons
+         //icons
           var kieznerdsicon = L.icon({
         		iconUrl: 'img/marker.png',
         		iconSize: [25, 41],
@@ -210,58 +189,41 @@
           //Geojson
           var locations = {
             "type": "FeatureCollection",
-            "features": [{
+            "features": [
+              /*{
                 "type": "Feature",
                 "properties": {
-                  "Title": "Kommunikation bei Tieren",
-                  "Scientist": "Mirjam Knörnschild",
-                  "Location": "Cafe Corsini,<br />Kronprinzessinnenweg 250,<br /> 14109 Berlin",
-                  "Time": "14. April<br />15 bis 17 Uhr",
+                  "Title": "Rückenschmwerzen 10 Jahre nach Zahnbehandlung",
+                  "Scientist": "Ruth Nebel",
+                  "Location": "Künstlerkolonie Breitenbachplatz,<br />tbd,<br /> Berlin",
+                  "Time": "10. November<br />tbd",
                   "Language": "Deutsch",
                   "Comments": "",
-                  "Link": "<a href=\"https:\/\/www.facebook.com\/events\/159800721397315\/\">Mehr</a>",
-                  "Lat": 52.421123,
-                  "Long": 13.178376
+                  "Link": "<a href=\"https:\/\/www.facebook.com\/events\/?\/\">Mehr</a>",
+                  "Lat": 52.466882,
+                  "Long": 13.314186
                 },
                 "geometry": {
                   "type": "Point",
-                  "coordinates": [13.178376, 52.421123]
+                  "coordinates": [13.314186, 52.466882]
                 }
-              },
+              },*/
               {
                 "type": "Feature",
                 "properties": {
-                  "Title": "Aleksej und die böhmischen Flüchtlinge",
-                  "Scientist": "Aleksej Tikhonov",
-                  "Location": "Café Fincan,<br />Altenbraker Str. 26,<br />12051 Berlin",
-                  "Time": "14. April<br />17 bis 19 Uhr",
+                  "Title": "Kontrolle ist gut. Vertrauen ist besser.",
+                  "Scientist": "Stefanie Molthagen-Schnöring",
+                  "Location": "La Tazza,<br />Hufelandstr. 18,<br />10407 Berlin",
+                  "Time": "10. November<br />14:30 bis 16 Uhr",
                   "Language": "Deutsch",
                   "Comments": "",
-                  "Link": "<a href=\"https:\/\/www.facebook.com\/events\/201207737310640\/\">Mehr</a>",
-                  "Lat": 52.46931,
-                  "Long": 13.432646
+                  "Link": "<a href=\"https:\/\/www.facebook.com\/events\/2217188285231730\/\">Mehr</a>",
+                  "Lat": 52.531813,
+                  "Long": 13.431986
                 },
                 "geometry": {
                   "type": "Point",
-                  "coordinates": [13.432646, 52.46931]
-                }
-              },
-              {
-                "type": "Feature",
-                "properties": {
-                  "Title": "Ahana, Linus, Simon und die Fledermäuse",
-                  "Scientist": "Ahana Aurora Fernandez,<br />Linus Günther,<br />Simon Ripperger",
-                  "Location": "Kauz & Kiebitz,<br />Reuterstraße 47,<br />12047 Berlin ",
-                  "Time": "14. April<br />19 bis 21 Uhr",
-                  "Language": "Deutsch (English, Espagnol)",
-                  "Comments": "",
-                  "Link": "<a href=\"https:\/\/www.facebook.com\/events\/177461156212433\/\">Mehr</a>",
-                  "Lat": 52.490037,
-                  "Long": 13.429003
-                },
-                "geometry": {
-                  "type": "Point",
-                  "coordinates": [13.429003, 52.490037]
+                  "coordinates": [13.431986, 52.531813]
                 }
               },
               {
@@ -270,10 +232,10 @@
                   "Title": "Rationalität, Horoskope und wie Tiere Entscheidungen treffen",
                   "Scientist": "Vladislav Nachev",
                   "Location": "Atopia Kaffeehaus,<br />Prenzlauer Allee 187,<br />10405 Berlin",
-                  "Time": "14. April<br />16 bis 18 Uhr",
+                  "Time": "10. November<br />16 bis 18 Uhr",
                   "Language": "Deutsch",
                   "Comments": "",
-                  "Link": "<a href=\"https:\/\/www.facebook.com\/events\/160950291260402\/\">Mehr</a>",
+                  "Link": "<a href=\"https:\/\/www.facebook.com\/events\/2515311738486834\/\">Mehr</a>",
                   "Lat": 52.541571,
                   "Long": 13.42537
                 },
@@ -285,419 +247,240 @@
               {
                 "type": "Feature",
                 "properties": {
-                  "Title": "Barbara, Annika und das Kohlendioxid",
-                  "Scientist": "Barbara Olfe-Kräutlein,<br />Annika Marxen",
-                  "Location": "Frohsinn,<br />Cranachstraße 39,<br />12157 Berlin",
-                  "Time": "14. April<br />10 bis 12 Uhr",
+                  "Title": "Die Licht- und Schattenseiten von Cannabis",
+                  "Scientist": "Katharina	Stumpenhorst",
+                  "Location": "Alcatraz,<br />Bundesplatz 6,<br />10715 Berlin",
+                  "Time": "10. November<br />17:30 bis 19 Uhr",
                   "Language": "Deutsch",
                   "Comments": "",
-                  "Link": "<a href=\"https:\/\/www.facebook.com\/events\/173549433292630\/\">Mehr</a>",
-                  "Lat": 52.464642,
-                  "Long": 13.342659
+                  "Link": "<a href=\"https:\/\/www.facebook.com\/events\/308639909865207\/\">Mehr</a>",
+                  "Lat": 52.47905,
+                  "Long": 13.328219
                 },
                 "geometry": {
                   "type": "Point",
-                  "coordinates": [13.342659, 52.464642]
+                  "coordinates": [13.328219, 52.47905]
                 }
               },
               {
                 "type": "Feature",
                 "properties": {
-                  "Title": "Türsteher und Remmidemmi",
-                  "Scientist": "Christine Preiser",
-                  "Location": "Café Commune,<br />Reichenberger Straße 157,<br />10999 Berlin",
-                  "Time": "14. April<br />20 bis 24 Uhr",
+                  "Title": "Klimawandel und das andere CO2-Problem",
+                  "Scientist": "Felix	Raulf",
+                  "Location": "Parkcafé Pusteblume,<br />Durlacher Str. 2,<br />10715 Berlin",
+                  "Time": "10. November<br />15 bis 16:30 Uhr",
                   "Language": "Deutsch",
                   "Comments": "",
-                  "Link": "<a href=\"https:\/\/www.facebook.com\/events\/179478066176609\/\">Mehr</a>",
-                  "Lat": 52.497745,
-                  "Long": 13.423261
+                  "Link": "<a href=\"https:\/\/www.facebook.com\/events\/473036259871168\/\">Mehr</a>",
+                  "Lat": 52.4802259,
+                  "Long": 13.336453
                 },
                 "geometry": {
                   "type": "Point",
-                  "coordinates": [13.423261, 52.497745]
+                  "coordinates": [13.336453, 52.4802259]
                 }
               },
               {
                 "type": "Feature",
                 "properties": {
-                  "Title": "Marsvulkane, planetare Missionen<br />und Teilchenbeschleiniger",
-                  "Scientist": "Stefanie Musiol,<br />Heike Balthasar,<br />Thorsten Kamps",
-                  "Location": "Maria-Rimkus-Haus,<br />Gallwitzallee 53,<br />12249 Berlin-Lankwitz",
-                  "Time": "14. April<br />15 bis 17 Uhr",
-                  "Language": "Deutsch",
-                  "Comments": "Organisiert von Henning Krause",
-                  "Link": "<a href=\"http:\/\/divergent.de\/2018\/03\/12\/kieznerds-berlin-lankwitz-2018\/\">Mehr</a><br /><a href=\"https:\/\/www.facebook.com\/events\/128840274622899\/\">Facebook Event</a>",
-                  "Lat": 52.430957,
-                  "Long": 13.347097
+                  "Title": "Warum gibt es so viele Tierarten und wie wird man sie wieder los?",
+                  "Scientist": "Richard	Hofmann",
+                  "Location": "Wernesgrüner B,<br />Treskowallee 68,<br />10318 Berlin",
+                  "Time": "10. November<br />ab 19 Uhr",
+                  "Language": "Deutsch, English",
+                  "Comments": "",
+                  "Link": "<a href=\"https:\/\/www.facebook.com\/events\/496263997539078\/\">Mehr</a>",
+                  "Lat": 52.48661,
+                  "Long": 13.526496
                 },
                 "geometry": {
                   "type": "Point",
-                  "coordinates": [13.347097, 52.430957]
+                  "coordinates": [13.526496, 52.48661]
                 }
               },
               {
                 "type": "Feature",
                 "properties": {
-                  "Title": "Was über Tomaten und den Versuch das Wetter zu ignorieren",
-                  "Scientist": "Markus Strehlau,<br />Micha Ahchige",
-                  "Location": "KuZe,<br />Hermann-Elflein-Straße 10,<br />14467 Potsdam",
-                  "Time": "14. April<br />20 bis 22 Uhr",
-                  "Language": "Deutsch",
+                  "Title": "Forschungsfall Nachtigall",
+                  "Scientist": "Silke Voigt-Heucke",
+                  "Location": "Strandbad Mitte,<br />Kleine Hamburger Str. 16,<br />10117 Berlin",
+                  "Time": "10. November<br />16 bis 17:30 Uhr",
+                  "Language": "Deutsch, English",
                   "Comments": "",
-                  "Link": "<a href=\"https:\/\/www.facebook.com\/events\/2003850583170596\/\">Mehr</a>",
-                  "Lat": 52.400427,
-                  "Long": 13.049504
+                  "Link": "<a href=\"https:\/\/www.facebook.com\/events\/534230377062310\/\">Mehr</a>",
+                  "Lat": 52.527553,
+                  "Long": 13.396713
                 },
                 "geometry": {
                   "type": "Point",
-                  "coordinates": [13.049504, 52.400427]
+                  "coordinates": [13.396713, 52.527553]
                 }
               },
               {
                 "type": "Feature",
                 "properties": {
-                  "Title": "Karriere einer Nervenzelle",
-                  "Scientist": "Ioana Weber,<br />Diana Alatriste",
-                  "Location": "Meyan,<br />Goltzstr 36,<br />10781 Berlin",
-                  "Time": "14. April<br />19 bis 21 Uhr",
-                  "Language": "Deutsch",
+                  "Title": "Der Säbelzahnfrosch - stinkt er statt zu quaken?",
+                  "Scientist": "Marvin Schäfer",
+                  "Location": "Cafe Lehmbrucks,<br />Fehlerstraße 1,<br />12161 Berlin",
+                  "Time": "10. November<br />13 bis 17:30 Uhr",
+                  "Language": "Deutsch, English",
                   "Comments": "",
-                  "Link": "<a href=\"https:\/\/www.facebook.com\/events\/1732535926767643\/\">Mehr</a>",
-                  "Lat": 52.493741,
-                  "Long": 13.353524
+                  "Link": "<a href=\"https:\/\/www.facebook.com\/events\/2189349724675999\/\">Mehr</a>",
+                  "Lat": 52.476954,
+                  "Long": 13.326626
                 },
                 "geometry": {
                   "type": "Point",
-                  "coordinates": [13.353524, 52.493741]
+                  "coordinates": [13.326626, 52.476954]
+                }
+              },
+              {
+                "type": "Feature",
+                "properties": {
+                  "Title": "Ins Schwarze Loch, statt hinter den Mond.",
+                  "Scientist": "Claudio	Paganini",
+                  "Location": "Frollein Langner,<br />Weisestraße 34,<br />12049 Berlin",
+                  "Time": "10. November<br />12 bis 15 Uhr",
+                  "Language": "Deutsch, English",
+                  "Comments": "",
+                  "Link": "<a href=\"https:\/\/www.facebook.com\/events\/484050805449901\/\">Mehr</a>",
+                  "Lat": 52.474113,
+                  "Long": 13.425624
+                },
+                "geometry": {
+                  "type": "Point",
+                  "coordinates": [13.425624, 52.474113]
                 }
               },
               {
               "type": "Feature",
               "properties": {
-                "Title": "Silke, Denise und der Forschungsfall Nachtigall",
-                "Scientist": "Silke Voigt-Heucke,<br />Denise Bock",
-                "Location": "Bloona,<br />Gärtnerstraße 12,<br/>10245 Berlin",
-                "Time": "14. April<br />20 bis 22 Uhr",
-                "Language": "Deutsch",
+                "Title": "Kommunikation bei Tieren",
+                "Scientist": "Mirjam Knörnschild",
+                "Location": "Café Corsini,<br />Kronprinzessinenweg 250,<br/>14109 Berlin",
+                "Time": "10. November<br />15 bis 17 Uhr",
+                "Language": "Deutsch, English",
                 "Comments": "",
-                "Link": "<a href=\"https:\/\/www.facebook.com\/events\/564402603939901\/\">Mehr</a>",
-                "Lat": 52.510534,
-                "Long": 13.460875
+                "Link": "<a href=\"https:\/\/www.facebook.com\/events\/1510005189101079\/\">Mehr</a>",
+                "Lat": 52.421123,
+                "Long": 13.178376
               },
               "geometry": {
                 "type": "Point",
-                "coordinates": [13.460875, 52.510534]
+                "coordinates": [13.178376, 52.421123]
               }
             },
-            {
+            /*{
             "type": "Feature",
             "properties": {
-              "Title": "Stefanie und die Sache mit dem Vertrauen",
-              "Scientist": "Stefanie Molthagen-Schnöring",
-              "Location": "La Tazza,<br />Hufelandstraße 18,<br />10407 Berlin",
-              "Time": "14. April<br />16 bis 18 Uhr",
-              "Language": "Deutsch",
+              "Title": "Fröhliches Scheitern! – Spielbasiert Unternehmenskultur gestalten",
+              "Scientist": "Martin Steinicke",
+              "Location": "tbd",
+              "Time": "10. November<br />tbd",
+              "Language": "Deutsch, English",
               "Comments": "",
-              "Link": "<a href=\"https:\/\/www.facebook.com\/events\/566668010369835\/\">Mehr</a>",
-              "Lat": 52.531813,
-              "Long": 13.431986
+              "Link": "<a href=\"https:\/\/www.facebook.com\/events\/?\/\">Mehr</a>",
+              "Lat":  52.516255,
+              "Long": 13.377522
             },
             "geometry": {
               "type": "Point",
-              "coordinates": [13.431986, 52.531813]
+              "coordinates": [13.377522, 52.516255]
             }
-          },
+          },*/
           {
           "type": "Feature",
           "properties": {
-            "Title": "Wie funktioniert die Forschung?",
-            "Scientist": "Antonia Rötger",
-            "Location": "Café Pfeiffers,<br />Oranienstrasse 17,<br />10999 Berlin",
-            "Time": "14. April<br />16 bis 18 Uhr",
+            "Title": "Nadeln in Heuhaufen – Datenberge in der biomedizischen Forschung",
+            "Scientist": "Emanuel Wyler",
+            "Location": "Pasticceria Mangiarte,<br />Danziger Str. 23,<br />10435 Berlin",
+            "Time": "10. November<br />14 bis 16 Uhr",
             "Language": "Deutsch",
             "Comments": "",
-            "Link": "<a href=\"https:\/\/www.facebook.com\/events\/346867182386742\/\">Mehr</a>",
-            "Lat": 52.500496,
-            "Long": 13.422805
+            "Link": "<a href=\"https:\/\/www.facebook.com\/events\/2294787373883172\/\">Mehr</a>",
+            "Lat": 52.540536,
+            "Long": 13.416853
           },
           "geometry": {
             "type": "Point",
-            "coordinates": [13.422805, 52.500496]
+            "coordinates": [13.416853, 52.540536]
           }
         },
         {
         "type": "Feature",
         "properties": {
-          "Title": "Chemie außerhalb des Labors? Startups in Berlin",
-          "Scientist": "Marie Westphal<br />Rahel Marschall",
-          "Location": "Buchkantine,<br />Dortmunder Straße 1,<br />10555 Berlin",
-          "Time": "14. April<br />16 bis 18 Uhr",
+          "Title": "Über Formen 'normalen' Denkens und wie sich Menschen darin unterscheiden",
+          "Scientist": "Josef Merk",
+          "Location": "Home Cafe,<br />Jonasstraße 23,<br />12053 Berlin",
+          "Time": "10. November<br />16 bis 17 Uhr",
           "Language": "Deutsch",
           "Comments": "",
-          "Link": "<a href=\"https:\/\/www.facebook.com\/events\/1540048049441255\/\">Mehr</a>",
-          "Lat": 52.521490,
-          "Long": 13.338415
+          "Link": "<a href=\"https:\/\/www.facebook.com\/events\/1907855985978084\/\">Mehr</a>",
+          "Lat": 52.471699,
+          "Long": 13.433468
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [13.338415, 52.521490]
+          "coordinates": [13.433468, 52.471699]
         }
       },
       {
       "type": "Feature",
       "properties": {
-        "Title": "Chemie außerhalb des Labors? Startups in Berlin",
-        "Scientist": "Marie Westphal<br />Rahel Marschall",
-        "Location": "Buchkantine,<br />Dortmunder Straße 1,<br />10555 Berlin",
-        "Time": "14. April<br />16 bis 18 Uhr",
-        "Language": "Deutsch",
+        "Title": "Misbehaving - Über Technologie, Psychologie und die Blockchain",
+        "Scientist": "Cosima Blazickova",
+        "Location": "Berlin Theke,<br />Oranienburger Str. 51,<br />10117 Berlin",
+        "Time": "10. November<br />14 bis 15 Uhr",
+        "Language": "Deutsch, English",
         "Comments": "",
-        "Link": "<a href=\"https:\/\/www.facebook.com\/events\/1540048049441255\/\">Mehr</a>",
-        "Lat": 52.521490,
-        "Long": 13.338415
+        "Link": "<a href=\"https:\/\/www.facebook.com\/events\/244320199597220\/\">Mehr</a>",
+        "Lat":  52.526071,
+        "Long": 13.387908
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [13.338415, 52.521490]
+        "coordinates": [13.387908, 52.526071]
       }
     },
-    {
+    /*{
     "type": "Feature",
     "properties": {
-      "Title": "Psychologie ist mehr als Psychotherapie",
-      "Scientist": "Klaus Mucha",
-      "Location": "Restaurant Mirabelle,<br />Schulzestr. 21,<br />13187 Berlin",
-      "Time": "14. April<br />12 bis 14 Uhr",
-      "Language": "Deutsch",
+      "Title": "Lügenpresse? Zukunft des unabhängigen Journalismus!",
+      "Scientist": "Steffen Kolb",
+      "Location": "tbd",
+      "Time": "10. November<br />tbd",
+      "Language": "Deutsch, English",
       "Comments": "",
-      "Link": "<a href=\"https:\/\/www.facebook.com\/events\/263753444163877\/\">Mehr</a>",
-      "Lat": 52.567616,
-      "Long": 13.390714
+      "Link": "<a href=\"https:\/\/www.facebook.com\/events\/?\/\">Mehr</a>",
+      "Lat": 52.516255,
+      "Long": 13.377522
     },
     "geometry": {
       "type": "Point",
-      "coordinates": [13.390714, 52.567616]
+      "coordinates": [13.377522, 52.516255]
     }
   },
   {
   "type": "Feature",
   "properties": {
-    "Title": "Klaus und die Solarenergie",
-    "Scientist": "Klaus Jäger",
-    "Location": "Die kaffeenauten,<br />Schützenstr. 4,<br />12165 Berlin-Steglitz",
-    "Time": "14. April<br />16 bis 17 Uhr",
-    "Language": "Deutsch",
+    "Title": "Virtuelle Realität und das Gehirn: VR in Hirnforschung und Neurologie",
+    "Scientist": "Michael Gaebler",
+    "Location": "tbd",
+    "Time": "10. November<br />11 bis 12 Uhr",
+    "Language": "Deutsch, English",
     "Comments": "",
-    "Link": "<a href=\"https:\/\/www.facebook.com\/events\/1785685411471162\/\">Mehr</a>",
-    "Lat": 52.454898,
-    "Long": 13.324461
+    "Link": "<a href=\"https:\/\/www.facebook.com\/events\/?\/\">Mehr</a>",
+    "Lat": 52.516255,
+    "Long": 13.377522
   },
   "geometry": {
     "type": "Point",
-    "coordinates": [13.324461, 52.454898]
+    "coordinates": [13.377522, 52.516255]
   }
-},
-{
-"type": "Feature",
-"properties": {
-  "Title": "Christian und Tim und die chemischen Reaktionen",
-  "Scientist": "Christian Stemmle,<br />Tim Kröber",
-  "Location": "Café Bilderbuch,<br />Akazienstr. 28,<br />10823 Berlin",
-  "Time": "14. April<br />14 bis 16 Uhr",
-  "Language": "Deutsch",
-  "Comments": "",
-  "Link": "<a href=\"https:\/\/www.facebook.com\/events\/412538345855339\/\">Mehr</a>",
-  "Lat": 52.486731,
-  "Long": 13.355059
-},
-"geometry": {
-  "type": "Point",
-  "coordinates": [13.355059, 52.486731]
-}
-},
-{
-"type": "Feature",
-"properties": {
-  "Title": "Was ist mit unserem Wetter los?",
-  "Scientist": "Nadine Dräger,<br />Janina Stapel",
-  "Location": "Charlottchen,<br />Droysenstr. 1 (Ecke Gervinusstraße),<br />10629 Berlin",
-  "Time": "14. April<br />11 bis 13 Uhr",
-  "Language": "Deutsch, English",
-  "Comments": "",
-  "Link": "<a href=\"https:\/\/www.facebook.com\/events\/1880705621961888\/\">Mehr</a>",
-  "Lat": 52.503031,
-  "Long": 13.300650
-},
-"geometry": {
-  "type": "Point",
-  "coordinates": [13.300650, 52.503031]
-}
-},
-{
-"type": "Feature",
-"properties": {
-  "Title": "Was Viren mit unseren Zellen machen",
-  "Scientist": "Emanuel Wyler",
-  "Location": "Pasticceria Mangiarte,<br />Danziger Str. 23<br />10435 Berlin",
-  "Time": "14. April<br />14 bis 16 Uhr",
-  "Language": "Deutsch, English",
-  "Comments": "",
-  "Link": "<a href=\"https:\/\/www.facebook.com\/events\/1643670149087576\/\">Mehr</a>",
-  "Lat": 52.540536,
-  "Long": 13.416853
-},
-"geometry": {
-  "type": "Point",
-  "coordinates": [13.416853, 52.540536]
-}
-},
-{
-"type": "Feature",
-"properties": {
-  "Title": "Tamara und das Innere der Erde",
-  "Scientist": "Tamara Worzewski",
-  "Location": "Club A18,<br />Wasgenstraße 75,<br />14129 Berlin",
-  "Time": "14. April<br />15 bis 17 Uhr",
-  "Language": "Deutsch",
-  "Comments": "",
-  "Link": "<a href=\"https:\/\/www.facebook.com\/events\/181438322667921\/\">Mehr</a>",
-  "Lat": 52.4285830,
-  "Long": 13.2156485
-},
-"geometry": {
-  "type": "Point",
-  "coordinates": [13.2156485, 52.4285830]
-}
-},
-{
-"type": "Feature",
-"properties": {
-  "Title": "Anne und die Zebrafische",
-  "Scientist": "Anne Merks",
-  "Location": "Kater und Goldfisch<br />Exerzierstr. 1,<br />13357 Berlin",
-  "Time": "14. April<br />16 bis 18 Uhr",
-  "Language": "Deutsch",
-  "Comments": "",
-  "Link": "<a href=\"https:\/\/www.facebook.com\/events\/214345012651786\/\">Mehr</a>",
-  "Lat": 52.553494,
-  "Long": 13.376592
-},
-"geometry": {
-  "type": "Point",
-  "coordinates": [13.376592, 52.553494]
-}
-},
-{
-"type": "Feature",
-"properties": {
-  "Title": "Gehirn: Alles außer Nervenzelle",
-  "Scientist": "Philipp Jordan,<br />Niklas Meyer",
-  "Location": "Kugelbahn Wedding,<br />Grüntalerstrasse 51,<br />13359 Berlin",
-  "Time": "14. April<br />20:30 bis 24 Uhr",
-  "Language": "Deutsch, English",
-  "Comments": "",
-  "Link": "<a href=\"https:\/\/www.facebook.com\/events\/579216695767506\/\">Mehr</a>",
-  "Lat": 52.557448,
-  "Long": 13.395757
-},
-"geometry": {
-  "type": "Point",
-  "coordinates": [13.395757, 52.557448]
-}
-},
-{
-"type": "Feature",
-"properties": {
-  "Title": "Regina und Olga über die Religionen",
-  "Scientist": "Olga Sokolova,<br />Regina Elsner",
-  "Location": "Ya Man,<br />Gotzkowskystraße 17,<br />10555 Berlin",
-  "Time": "14. April<br />16 bis 17:30 Uhr",
-  "Language": "Deutsch, English",
-  "Comments": "",
-  "Link": "<a href=\"https:\/\/www.facebook.com\/events\/573735519671853\/\">Mehr</a>",
-  "Lat": 52.524417,
-  "Long": 13.329638
-},
-"geometry": {
-  "type": "Point",
-  "coordinates": [13.329638, 52.524417]
-}
-},
-{
-"type": "Feature",
-"properties": {
-  "Title": "Elshad und künstliche Intelligenz",
-  "Scientist": "Elshad Shirinov",
-  "Location": "Ya Man,<br />Gotzkowskystraße 17,<br />10555 Berlin",
-  "Time": "14. April<br />17:30 bis 18 Uhr",
-  "Language": "Deutsch, English",
-  "Comments": "",
-  "Link": "<a href=\"https:\/\/www.facebook.com\/events\/2031611190438974\/\">Mehr</a>",
-  "Lat": 52.524418,
-  "Long": 13.329821
-},
-"geometry": {
-  "type": "Point",
-  "coordinates": [13.329821, 52.524418]
-}
-},
-{
-"type": "Feature",
-"properties": {
-  "Title": "Hyenas, elephants and other big stuff",
-  "Scientist": "Colin Vullioud,<br />Alexandre Courtiol",
-  "Location": "Brewdog Mitte Berlin,<br />Ackerstraße 29,<br />10115 Berlin",
-  "Time": "14. April<br />18 bis 21 Uhr",
-  "Language": "Deutsch, English",
-  "Comments": "",
-  "Link": "<a href=\"https:\/\/www.facebook.com\/events\/711299432593387\/\">Mehr</a>",
-  "Lat": 52.532850,
-  "Long": 13.395794
-},
-"geometry": {
-  "type": "Point",
-  "coordinates": [13.395794, 52.532850]
-}
-},
-{
-"type": "Feature",
-"properties": {
-  "Title": "Katrin und die Potenzial neuer Technologien",
-  "Scientist": "Katrin Gerlinger",
-  "Location": "Isola Verde,<br />Gorkistr. 206,<br />13437 Berlin",
-  "Time": "14. April<br />13 bis 15 Uhr",
-  "Language": "Deutsch",
-  "Comments": "",
-  "Link": "<a href=\"https:\/\/www.facebook.com\/events\/442814972820052\/\">Mehr</a>",
-  "Lat": 52.593256,
-  "Long": 13.312883
-},
-"geometry": {
-  "type": "Point",
-  "coordinates": [13.312883, 52.593256]
-}
-},
-{
-"type": "Feature",
-"properties": {
-  "Title": "Animal Pub Quiz",
-  "Scientist": "Cecilia Kruszynski Assis,<br />Kseniia Kravchenko,<br/>Dr. Shannon Currie",
-  "Location": "Home Bar<br />Neue Bahnhofstraße 23,<br />10245 Berlin",
-  "Time": "14. April<br />18 bis 19 Uhr",
-  "Language": "English",
-  "Comments": "",
-  "Link": "<a href=\"https:\/\/www.facebook.com\/events\/209029549872338\/\">Mehr</a>",
-  "Lat": 52.507293,
-  "Long": 13.470890
-},
-"geometry": {
-  "type": "Point",
-  "coordinates": [13.470890, 52.507293]
-}
-}
+},*/
             ]
           }
+
 
           //Data binding
           L.geoJSON(locations, {
@@ -707,7 +490,7 @@
               onEachFeature: onEachFeature
           }).addTo(map);
       </script>
--->
+
 
 <!--<div class="container h-100">
         <div class="row h-100">
@@ -739,7 +522,28 @@
       </div>
     </section>
 -->
+<section class="warum" id="was" style="padding-top: 110px; padding-bottom:10px;">
+  <div class="container">
+      <p>Das Klischee kennt jeder: Am Stammtisch werden die Weltprobleme gelöst. Probiere es aus, mit tollen Gesprächspartnerinnen und -partnern: Am Samstag, den 10. November, kannst Du Forscherinnen und Forscher in ihrer Lieblingskneipe treffen und mit Ihnen diskutieren.</p><br />
+      <h2>„Kieznerds – Gemeinsam retten wir die Welt”</h2>
+      <p>Wissenschaftlerinnen und Wissenschaftler sind Teil unserer Gesellschaft und haben Meinungen, Wünsche und Hoffnungen wie wir alle. Auch die Forschenden sind Teil unserer Gesellschaft und engagieren sich für unterschiedliche Anliegen.</p>
+      <p>Normalerweise arbeiten sie zwar an ziemlich speziellen Teilproblemen in den vielen Forschungseinrichtungen der Stadt. Oft klingt das sehr kompliziert, was sie tun, aber wenn man darüber spricht, wird klar: Sie arbeiten im Grunde daran, die Welt und unsere Gesellschaft besser zu verstehen und die großen Probleme unserer Zeit zu lösen. Sie entwickeln bessere Solarzellen und beobachten, wie sich Ökosysteme durch Klimawandel und andere menschliche Eingriffe verändern. Andere erforschen, wie wir gesund und glücklich alt werden können, untersuchen, wie Gewalt entsteht oder wie Reichtum gerechter verteilt werden könnte. Das sind wichtige Fragen, die uns alle angehen.</p>
+      <p>Lerne Expertinnen und Experten aus Deinem Kiez kennen, stelle die Fragen, die Dich bewegen und diskutiere offen und auf Augenhöhe mit ihnen! </p>
+      <p>Denn: Die Wissenschaft allein kann die Welt nicht retten – Nur gemeinsam retten wir die Welt!</p><br />
 
+      <p><strong>Datum: Samstag, den 10. November 2018</strong></p>
+      <p><strong>Uhrzeit:  jeweils eine Stunde, über den ganzen Tag verteilt - wird rechtzeitig bekanntgegeben</strong></p>
+      <p><strong>Wo: In Kneipen, Cafés, Gemeindezentren, Bars … in Berlin und Potsdam</strong></p><br />
+      <p>(Das vollständige Programm mit Adressen, Themen und Zeiten veröffentlichen wir dann hier.)</p><br />
+      <h3>Die Kieznerds - eine Aktion des Berliner March for Science</h3>
+      <p>Die Kieznerds sind aus dem <a href="http://marchforscienceberlin.de/">Berliner March for Science</a> entstanden, einer Demonstration für Aufklärung und Wissenschaft, die weltweit in vielen Städten am 22. April 2017 stattfand. Das Anliegen: Wissenschaftlich fundierte Erkenntnisse müssen ausreichend Gehör in Politik und Gesellschaft finden! In Berlin haben mehr als 10.000 Menschen dafür demonstriert.</p>
+      <p>Im Anschluss an diesen Erfolg kam im Berliner Organisationsteam die Idee auf, neue Gelegenheiten für direkte Gespräche zwischen Laien und Fachleuten zu schaffen: Die Kieznerds! Alle Kieznerds sind als Forscherinnen oder Forscher in Berlin und Potsdam tätig und haben sich freiwillig gemeldet, weil sie gerne mit ihren Nachbarinnen und Nachbarn in ihrem Kiez ins Gespräch kommen wollen.</p>
+      <p>Zum Jahrestag des <a href="http://marchforscienceberlin.de/">Berliner March for Science</a>, am 14. April 2018, fanden die „Kieznerds“ zum ersten Mal statt:  22 Wissenschaftlerinnen und 15 Wissenschaftler unterhielten sich mit ihren Nachbarinnen und Nachbarn, mit neugierigen Besuchern und Zufallsbekanntschaften. In 25 Cafés, Restaurants, Bars und anderen Lokalitäten in Berlin und Potsdam stellten sie ihre Forschung vor und diskutierten über den Wert von Wissenschaft für die Gesellschaft.</p>
+      <p><strong>Nun sind die Kieznerds ein zweites Mal unterwegs. Mach mit!</strong></p>
+
+  <br />
+  </div>
+</section>
     <section class="ueberuns bg-secondary" id="machmit">
       <div class="container">
         <div class="section-heading">
